@@ -1,0 +1,10 @@
+﻿  tinyfiledialogs.c
+  main.cpp
+D:\Project\Infera\SFML-TGUI-Template\SFML\main.cpp(17,23): warning C4244: 'initializing': conversion from 'float' to 'unsigned int', possible loss of data
+D:\Project\Infera\SFML-TGUI-Template\SFML\main.cpp(95,27): warning C4018: '<': signed/unsigned mismatch
+D:\Project\Infera\SFML-TGUI-Template\SFML\main.cpp(96,31): warning C4018: '<': signed/unsigned mismatch
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 218 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  SFML.vcxproj -> D:\Project\Infera\SFML-TGUI-Template\Release\Infera.exe

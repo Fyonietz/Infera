@@ -1,0 +1,7 @@
+Background:#49337F;.FromArgb(73, 51, 127);
+Colour 1:#303E9B;.FromArgb(48, 62, 155);
+Colour 2:#7B2F7D;.FromArgb(123, 47, 125);
+Accent:#DEC63C;.FromArgb(222, 198, 60);
+Text:#F5F4FA;.FromArgb(245, 244, 250);
+
+Infera is a powerful software designed to simplify data visualization

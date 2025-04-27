@@ -1,0 +1,39 @@
+Button.Button1 {
+    Position = (370, 20);
+    Text = Button;
+    TextSize = 13;
+    Size=(100, 30);
+    Renderer {
+        BackgroundColor = #7B2F7D;
+        BackgroundColorDisabled = #E6E6E6;
+        BackgroundColorDown = #EBEBEB;
+        BackgroundColorHover = white;
+        BorderColor = #3C3C3C;
+        BorderColorDisabled = #7D7D7D;
+        BorderColorDown = black;
+        BorderColorFocused = #1E1EB4;
+        BorderColorHover = black;
+        Borders = (0, 0, 0, 0);
+        TextColor = #DEC63C;
+        TextColorDisabled = #7D7D7D;
+        TextColorDown = black;
+        TextColorHover = black;
+        Texture = None;
+        TextureDisabled = None;
+        TextureDown = None;
+        TextureDownFocused = None;
+        TextureDownHover = None;
+        TextureFocused = None;
+        TextureHover = None;
+    }
+}
+
+Panel.SideNav {
+    Size = (150, 150);
+
+    Renderer {
+        BackgroundColor = #7B2F7D;
+        BorderColor = black;
+        TextureBackground = None;
+    }
+}
