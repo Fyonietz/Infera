@@ -1,4 +1,4 @@
-# Infera
+# Infera (On Development)
 ![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 ![SFML](https://img.shields.io/badge/SFML-4E9F3D?style=for-the-badge&logo=sfml&logoColor=white)
 ![TGUI](https://img.shields.io/badge/TGUI-4A90E2?style=for-the-badge&logo=tgui&logoColor=white)
