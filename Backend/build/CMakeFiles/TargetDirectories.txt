@@ -1,0 +1,3 @@
+/d/Project/Data Visual/Infera/Backend/build/CMakeFiles/logic.dir
+/d/Project/Data Visual/Infera/Backend/build/CMakeFiles/edit_cache.dir
+/d/Project/Data Visual/Infera/Backend/build/CMakeFiles/rebuild_cache.dir

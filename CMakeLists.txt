@@ -11,6 +11,7 @@ qt_add_executable(Infera
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
+    backend.cpp
 )
 
 target_link_libraries(Infera

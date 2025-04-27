@@ -1,0 +1,4 @@
+Nama,Kelas,Jurusan
+Habib Herdiansyah,10,RPL
+Fajar Aslen Ferrari,10,RPL
+Fathir Adzan Satia,10,RPL
