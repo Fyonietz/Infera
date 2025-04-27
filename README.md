@@ -2,6 +2,8 @@
 ![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 ![SFML](https://img.shields.io/badge/SFML-4E9F3D?style=for-the-badge&logo=sfml&logoColor=white)
 ![TGUI](https://img.shields.io/badge/TGUI-4A90E2?style=for-the-badge&logo=tgui&logoColor=white)
+
+
 Infera is an integrated development environment (IDE) designed specifically for data science and data analysis. It provides a lightweight, fast, and intuitive platform for editing and visualizing data in CSV format. With features such as easy CSV editing, conversion of CSV to tables, bar chart generation, and PDF export, Infera simplifies the process of working with data for analysts and data scientists.
 
 ## Features
@@ -26,4 +28,4 @@ To install Infera on your machine, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/Infera.git
+   git clone https://github.com/fyonietz/Infera.git
