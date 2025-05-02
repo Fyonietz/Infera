@@ -52,6 +52,7 @@ public:
         window.draw(table);
         window.draw(content);
     }
+  
 };
 
 // Class TableData
@@ -88,7 +89,7 @@ public:
             std::cerr << "Error: Failed to open CSV file at " << jsonPathAccesser << std::endl;
             return -1;
         }
-
+        
         // Read CSV file
         while (std::getline(inputFile, line)) {
             std::istringstream iss(line);
@@ -102,15 +103,47 @@ public:
 
         return 0;
     }
+    
 };
 
 TableData TableCore;
 
+class barChartContainer {
+public:
+    float posX, posY, Height, Width;
+    sf::RectangleShape chartContainer;
+    sf::RectangleShape leftBorder;
+    sf::RectangleShape bottomBorder;
+    barChartContainer(float x, float y, float h, float w) : posX(x),posY(y),Height(h),Width(w) {
+        chartContainer.setPosition(x, y);
+        chartContainer.setSize(sf::Vector2f(h, w));
+        chartContainer.setFillColor(sf::Color::White);
+        const float borderSize = 2.5f;
+        sf::Color borderColor = sf::Color::Black;
+        //outline
+        leftBorder.setSize(sf::Vector2f(borderSize,chartContainer.getSize().y));
+        leftBorder.setPosition(chartContainer.getPosition().x, chartContainer.getPosition().y);
+        leftBorder.setFillColor(borderColor);
+        bottomBorder.setSize(sf::Vector2f(chartContainer.getSize().x, borderSize));
+        bottomBorder.setPosition(chartContainer.getPosition().x, chartContainer.getPosition().y+chartContainer.getSize().y);
+        bottomBorder.setFillColor(borderColor);
+     
+    }
+    void draw(sf::RenderWindow& window) {
+        window.draw(chartContainer);
+        window.draw(leftBorder);
+        window.draw(bottomBorder);
+    }
+
+};
+
 int main() {
     std::string title = "Infera";
     sf::RenderWindow window(sf::VideoMode::getDesktopMode(), title, sf::Style::Fullscreen);
+    sf::Vector2u windowSize = window.getSize();
+    sf::Vector2f windowSizeF(static_cast<float>(windowSize.x), static_cast<float>(windowSize.y));
     tgui::GuiSFML gui(window);
-
+    barChartContainer chartContainer(100.f,100.f,300.f,300.f);
     // Load font
     if (!fonts.loadFromFile("Quicksand-Medium.ttf")) {
         std::cerr << "Error: Failed to load font 'Quicksand-Medium.ttf'" << std::endl;
@@ -127,7 +160,7 @@ int main() {
     float tablePosX = 40.f, tablePosY = 20.f;
     float cellHeight = 50.f, cellWidth = 100.f * 1.618f + fontSize;
 
-    auto drawTable = [&]() {
+    /*auto drawTable = [&]() {
         for (std::size_t r = 0; r < TableCore.test.size(); ++r) {
             for (std::size_t c = 0; c < TableCore.test[r].size(); ++c) {
                 std::string cellText = TableCore.test[r][c];
@@ -139,7 +172,7 @@ int main() {
                 cell.draw(window);
             }
         }
-        };
+        };*/
 
     // Check if the file is saved
     std::filesystem::file_time_type lastModified;
@@ -172,9 +205,9 @@ int main() {
                 }
             }
         }
-
+        
         // Periodically check for file changes
-        if (clock.getElapsedTime().asSeconds() >= 1.0f) {
+        if (clock.getElapsedTime().asMilliseconds() >= 50.0f) {
             clock.restart();
             try {
                 auto currentModified = std::filesystem::last_write_time(TableCore.jsonPathAccesser);
@@ -188,15 +221,17 @@ int main() {
             catch (const std::filesystem::filesystem_error& e) {
                 std::cerr << "Error: Unable to access file modification time - " << e.what() << std::endl;
             }
+            
+            std::this_thread::sleep_for(std::chrono::milliseconds(50));
         }
 
         window.clear(color.bg);
 
         // Draw table only if data is loaded
-        if (!TableCore.test.empty()) {
+      /*  if (!TableCore.test.empty()) {
             drawTable();
-        }
-
+        }*/
+        chartContainer.draw(window);
         gui.draw();
         window.display();
     }
@@ -206,45 +241,3 @@ int main() {
 
 
 
-//Nanti
-
-    // Function to load UI from form.txt
-//auto loadUI = [&]() {
-//    gui.removeAllWidgets();
-//    try {
-//        gui.loadWidgetsFromFile("form.txt");
-//    }
-//    catch (const tgui::Exception& e) {
-//        std::cerr << "TGUI Error: " << e.what() << std::endl;
-//        return;
-//    }
-//
-//    // Access widgets AFTER loading
-//    auto sideNav = gui.get<tgui::Panel>("SideNav");
-//    if (sideNav)
-//    {
-//        sideNav->setHeight(desktop.height);
-//        sideNav->setWidth("15%");
-//    }
-//
-//    auto button = gui.get<tgui::Button>("Button1");
-//    if (button)
-//    {
-//        button->setPosition("0%", "20%");
-//        button->setWidth("100%");
-//        button->onPress([] {
-//            std::cout << "Button clicked\n";
-//            const char* file = tinyfd_openFileDialog("Pick File", "", 0, NULL, NULL, 0);
-//            if (file)
-//                std::cout << "Picked: " << file << std::endl;
-//            else
-//                std::cout << "No file selected.\n";
-//            });
-//
-//        // Optional: add button to panel if needed
-//        if (sideNav)
-//            sideNav->add(button);
-//    }
-//    };
-
-/*loadUI(); */// Initial load
