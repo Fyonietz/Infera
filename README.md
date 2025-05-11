@@ -22,12 +22,14 @@ Infera is an integrated development environment (IDE) designed specifically for 
 - **Fast Editing**: Edit your CSV files and data structures quickly, with no unnecessary lag or complications.
 - **PDF Export**: Export your analysis, tables, and charts directly to a professional PDF format for easy sharing or printing.
 
+## License
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](./LICENSE) file for details.
+
 ## Installation
 
 To install Infera on your machine, follow these steps:
 
-## License
-This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](./LICENSE) file for details.
+
 
 
 1. Clone the repository:
