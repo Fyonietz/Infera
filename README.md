@@ -26,6 +26,10 @@ Infera is an integrated development environment (IDE) designed specifically for 
 
 To install Infera on your machine, follow these steps:
 
+## License
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](./LICENSE) file for details.
+
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/fyonietz/Infera.git
